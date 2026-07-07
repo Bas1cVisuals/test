@@ -643,3 +643,212 @@
         display: none !important;
     }
 }
+
+/* =========================================================
+   Adaptive Photos / Media Fit
+   Keeps all website photos responsive, stable, and optimized
+   ========================================================= */
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+.brand-avatar,
+.ee-photo,
+.showreel-poster,
+.ed-media img,
+.card-media img,
+.card-media video,
+.brand-float,
+.brand-particle,
+.card-under-float,
+.contact-under-float {
+    display: block;
+    max-width: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Profile / avatar images */
+.brand-avatar,
+.ee-photo {
+    aspect-ratio: 1 / 1 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    flex-shrink: 0 !important;
+}
+
+/* Portfolio thumbnails and showreel */
+.showreel-container,
+.ed-media,
+.card-media {
+    overflow: hidden !important;
+    background: #050505;
+    contain: layout paint;
+}
+
+.showreel-poster,
+.ed-media img,
+.card-media img,
+.card-media video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+/* Use this class if you want a full image/logo visible without crop */
+.media-contain,
+.media-contain img,
+img.media-contain {
+    object-fit: contain !important;
+    background: #050505;
+}
+
+/* Desktop image sizing */
+@media (min-width: 901px) {
+    .brand-avatar {
+        width: clamp(72px, 6vw, 96px) !important;
+        height: clamp(72px, 6vw, 96px) !important;
+    }
+
+    .showreel-container {
+        aspect-ratio: 21 / 9 !important;
+    }
+
+    .editorial-grid {
+        grid-auto-rows: clamp(220px, 16vw, 280px) !important;
+    }
+
+    .card-large,
+    .card-vertical {
+        min-height: 440px;
+    }
+}
+
+/* Tablet image sizing */
+@media (max-width: 1024px) {
+    .showreel-container {
+        aspect-ratio: 16 / 9 !important;
+    }
+
+    .editorial-grid {
+        grid-auto-rows: 240px !important;
+    }
+}
+
+/* Mobile image sizing */
+@media (max-width: 900px) {
+    .brand-avatar {
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    .ee-photo {
+        width: 88px !important;
+        height: 88px !important;
+    }
+
+    .showreel-container {
+        aspect-ratio: 16 / 10 !important;
+        border-radius: 16px !important;
+    }
+
+    .editorial-grid {
+        grid-auto-rows: clamp(220px, 42vw, 320px) !important;
+    }
+
+    .brand-float,
+    .brand-particle,
+    .card-under-float,
+    .contact-under-float {
+        object-fit: contain !important;
+        height: auto !important;
+        max-width: 42vw !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+    .brand-avatar {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .showreel-container {
+        aspect-ratio: 4 / 5 !important;
+    }
+
+    .editorial-grid {
+        grid-auto-rows: clamp(260px, 78vw, 360px) !important;
+    }
+
+    .card-media {
+        aspect-ratio: 16 / 9 !important;
+        min-height: 180px;
+    }
+
+    .brand-particle,
+    .card-under-float,
+    .contact-under-float {
+        max-width: 50vw !important;
+        opacity: 0.08;
+    }
+}
+
+/* Disable heavy image hover effects on touch devices */
+@media (hover: none), (pointer: coarse) {
+    .showreel-container:hover .showreel-poster,
+    .ed-card:hover .ed-media img,
+    .gallery-card:hover .card-media img,
+    .gallery-card:hover .card-media video {
+        transform: none !important;
+        filter: none !important;
+    }
+}
+
+
+/* =========================================================
+   Footer Always At Bottom Of Page
+   Recommended: footer stays at bottom if page is short
+   ========================================================= */
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.layout-grid {
+    min-height: 100vh;
+}
+
+.content-area {
+    min-height: 100vh;
+}
+
+.global-footer {
+    margin-top: auto !important;
+}
+
+
+/* Mobile footer spacing */
+@media (max-width: 900px) {
+    .content-area {
+        min-height: auto !important;
+    }
+
+    .global-footer {
+        margin-top: 48px !important;
+    }
+}

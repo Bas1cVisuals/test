@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&family=Quattrocento+Sans&display=swap');
-
 :root {
     --status-green: #ff6a00;
     --bg-base: #050505;
@@ -2019,4 +2017,21 @@ html[data-theme="dark"] .global-footer {
     .card-large, .card-vertical, .card-horizontal, .card-standard { grid-column: span 1; grid-row: span 1; }
     .data-counters { grid-template-columns: 1fr; text-align: center; }
     .premium-cta { padding: 48px 24px; }
+}
+
+:root {
+    --text-secondary: #a8a8a8;
+}
+
+html[data-theme="light"] {
+    --text-secondary: #4f4f4f;
+}
+
+.body-text,
+.card-sub,
+.op-desc,
+.footer-brand p,
+.node-metric,
+.brand-title {
+    color: var(--text-secondary) !important;
 }

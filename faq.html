@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link
+    rel="preload"
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'"
+>
+<noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap">
+</noscript>
     <meta charset="UTF-8">
     <script>
         (function() {
@@ -23,8 +32,24 @@
     <meta property="og:image" content="assets/Logo.webp">
     <link rel="canonical" href="faq.html">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    rel="preload"
+    href="css/style.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+>
+<noscript><link rel="stylesheet" href="css/style.css"></noscript>
+
+<link
+    rel="preload"
+    href="css/responsive.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+>
+<noscript><link rel="stylesheet" href="css/responsive.css"></noscript>
     <link rel="icon" href="assets/Logo.webp" type="image/webp">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/Logo.webp">
 </head>
@@ -54,7 +79,16 @@
     <div class="layout-grid">
         <aside class="sidebar">
             <div class="brand-header">
-                <img src="assets/Logo.webp" alt="Bas1c.Visuals Avatar" class="brand-avatar" loading="lazy">
+                <img
+    src="assets/Logo.webp"
+    alt="Bas1c.Visuals Avatar"
+    class="brand-avatar"
+    width="96"
+    height="96"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+>
                 <div class="brand-info">
                     <div class="brand-name">Bas1c.Visuals</div>
                     <div class="brand-title">Offline Editor / Colorist</div>
@@ -188,6 +222,6 @@ rel="noopener noreferrer" class="review-btn">Write a Review</a>
         </div>
     </div>
     <button id="scroll-top-btn" aria-label="Scroll to top">↑</button>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
